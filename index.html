@@ -1,11 +1,125 @@
-<!doctype html>
-<html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <title>1sttradingjch 테스트</title>
-  </head>
-  <body>
-    <h1>테스트 성공 🎉</h1>
-    <p>이 화면이 보이면 GitHub Pages + 레포 연결은 제대로 된 거야.</p>
-  </body>
-</html>
+diff --git a/index.html b/index.html
+index e94c0b2e5052554087ac3d28ee1e6ae6066ce733..12b24aebc0b01e014107e0198a8cc1330f792755 100644
+--- a/index.html
++++ b/index.html
+@@ -1,11 +1,117 @@
+ <!doctype html>
+ <html lang="ko">
+   <head>
+     <meta charset="utf-8" />
+-    <title>1sttradingjch 테스트</title>
++    <meta name="viewport" content="width=device-width, initial-scale=1" />
++    <title>1sttradingjch 포트폴리오 계산기</title>
++    <link rel="stylesheet" href="styles.css" />
+   </head>
+   <body>
+-    <h1>테스트 성공 🎉</h1>
+-    <p>이 화면이 보이면 GitHub Pages + 레포 연결은 제대로 된 거야.</p>
++    <header class="page-header">
++      <div class="header-content">
++        <div class="brand">
++          <span class="brand-mark">1st</span>
++          <span class="brand-name">Trading Helper</span>
++        </div>
++        <div class="page-title">
++          <h1>포트폴리오 계산기</h1>
++          <p>iPad에서도 손쉽게 탭을 전환하고 주요 액션을 빠르게 실행하세요.</p>
++        </div>
++      </div>
++    </header>
++
++    <nav class="tab-bar" aria-label="주요 탭">
++      <button class="tab-button active" type="button">자산 배분</button>
++      <button class="tab-button" type="button">수익률 계산</button>
++      <button class="tab-button" type="button">리밸런싱</button>
++      <button class="tab-button" type="button">관심 종목</button>
++    </nav>
++
++    <main>
++      <section class="card">
++        <header class="card-header">
++          <h2>빠른 계산</h2>
++          <p>목표 수익률과 투자 기간을 입력하고 한 번에 계산하세요.</p>
++        </header>
++        <div class="card-grid">
++          <div class="input-group">
++            <label for="target-return">목표 수익률(%)</label>
++            <input id="target-return" type="number" placeholder="예) 12" />
++          </div>
++          <div class="input-group">
++            <label for="invest-term">투자 기간(년)</label>
++            <input id="invest-term" type="number" placeholder="예) 3" />
++          </div>
++          <div class="input-group">
++            <label for="seed-money">투자 금액(만원)</label>
++            <input id="seed-money" type="number" placeholder="예) 500" />
++          </div>
++        </div>
++        <div class="action-area">
++          <button class="primary-button" type="button">계산하기</button>
++        </div>
++      </section>
++
++      <section class="card">
++        <header class="card-header">
++          <h2>종목 관리</h2>
++          <p>관심 종목을 추가하거나 비중을 조정해보세요.</p>
++        </header>
++        <div class="input-stack">
++          <div class="input-group">
++            <label for="symbol">종목 코드</label>
++            <input id="symbol" type="text" placeholder="예) AAPL" />
++          </div>
++          <div class="input-group">
++            <label for="weight">비중(%)</label>
++            <input id="weight" type="number" placeholder="예) 20" />
++          </div>
++        </div>
++        <div class="action-area">
++          <button class="primary-button ghost" type="button">관심 종목 추가</button>
++        </div>
++
++        <div class="item-list" aria-label="추가된 종목">
++          <div class="list-row">
++            <div>
++              <strong>NVDA</strong>
++              <span class="muted">미국 / 반도체</span>
++            </div>
++            <span class="pill positive">+8.4%</span>
++          </div>
++          <div class="list-row">
++            <div>
++              <strong>TSLA</strong>
++              <span class="muted">미국 / 자동차</span>
++            </div>
++            <span class="pill negative">-2.3%</span>
++          </div>
++        </div>
++      </section>
++
++      <section class="card">
++        <header class="card-header">
++          <h2>리밸런싱 제안</h2>
++          <p>현재 비중과 목표 비중을 비교해 자동으로 조정량을 제안합니다.</p>
++        </header>
++        <div class="card-grid">
++          <div class="stat">
++            <span class="label">현재 포트 가치</span>
++            <strong class="value">￦12,400,000</strong>
++          </div>
++          <div class="stat">
++            <span class="label">목표 수익률</span>
++            <strong class="value">10.5%</strong>
++          </div>
++          <div class="stat">
++            <span class="label">리밸런싱 필요 자산</span>
++            <strong class="value highlight">+￦1,200,000</strong>
++          </div>
++        </div>
++        <div class="action-area">
++          <button class="primary-button" type="button">리밸런싱 실행</button>
++        </div>
++      </section>
++    </main>
+   </body>
+ </html>
